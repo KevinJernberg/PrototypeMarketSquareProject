@@ -46,7 +46,8 @@ public class TestMovement : MonoBehaviour
             jumpTimer -= Time.deltaTime;
         }
     }
-
+    
+    //Movement input
     private void Movement()
     {
         if (Input.GetAxis("Vertical") != 0)
@@ -59,7 +60,8 @@ public class TestMovement : MonoBehaviour
             transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
         }
     }
-
+    
+    //Ground Check
     private void GroundedCheck()
     {
         //Raycast to se if anything is directly below you
@@ -72,7 +74,8 @@ public class TestMovement : MonoBehaviour
             grounded = false;
         }
     }
-
+    
+    //Jump
     private void Jump()
     {
         if (jumpTimer <= 0 && Input.GetButton("Jump") && grounded)
