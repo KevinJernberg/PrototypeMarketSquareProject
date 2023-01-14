@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="23fd547a-8ac9-4766-b255-8986445f0c22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MarketSquare/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MarketSquare/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Polytope Studio/Lowpoly Medieval Environments/SRP/PT_Environment_Pack_URP_7.5.3.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Asset packs/Low poly medieval/Lowpoly Medieval Environments/Sources/Materials/PT_Fruit_Tree_Foliage_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Asset packs/Low poly medieval/Lowpoly Medieval Environments/Sources/Materials/PT_Fruit_Tree_Foliage_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Kevin Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Kevin Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +14,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24849b8adc824129a6be3a206c90b9747c00/2c/58c9a936/Input.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../MonkPush/MonkPush/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2KKl7OXOCPrWSyZJAjQoVjVdefj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
