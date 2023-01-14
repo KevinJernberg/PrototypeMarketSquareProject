@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2909148434376694906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FMOD BUILD/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/FMOD BUILD/Desktop/Master.bank
+  Name: FMOD BUILD/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638093306921919590
+  FileSizes:
+  - Name: 
+    Value: 1036
+  Exists: 1
+--- !u!114 &-1957381739402621428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FMOD BUILD/Desktop/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/FMOD BUILD/Desktop/Master.strings.bank
+  Name: FMOD BUILD/Desktop/Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638093306921924696
+  FileSizes:
+  - Name: 
+    Value: 712
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -1957381739402621428}
+  - {fileID: -2909148434376694906}
+  - {fileID: 1270998460409321940}
+  EditorEvents: []
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -2909148434376694906}
+  - {fileID: 1270998460409321940}
+  StringsBanks:
+  - {fileID: -1957381739402621428}
+  cacheTime: 638093306921924696
+  cacheVersion: 131601
+--- !u!114 &1270998460409321940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FMOD PROJECT/MarketSquareProject/Build/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/FMOD PROJECT/MarketSquareProject/Build/Desktop/Master.bank
+  Name: FMOD PROJECT/MarketSquareProject/Build/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638093304842719428
+  FileSizes:
+  - Name: 
+    Value: 1036
+  Exists: 1
