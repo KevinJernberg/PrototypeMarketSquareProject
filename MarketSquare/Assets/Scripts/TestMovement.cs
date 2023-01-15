@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class TestMovement : MonoBehaviour
 {
     //Movement
-    [SerializeField] 
+    /*[SerializeField] 
     private float moveSpeed;
     [SerializeField] 
     private float rotateSpeed;
@@ -87,5 +87,5 @@ public class TestMovement : MonoBehaviour
             jumpTimer = 0.1f;
             _rigidbody.AddForce(Vector3.up * jumpForce);
         }
-    }
+    }*/
 }

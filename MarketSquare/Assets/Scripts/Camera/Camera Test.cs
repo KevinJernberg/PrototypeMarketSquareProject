@@ -15,7 +15,8 @@ public class CameraTest : MonoBehaviour
     
     void Update()
     {
-        //Jag vet inte vad jag gör om du undrar, bara ignorera det här så länge
+        //Jag vet inte vad jag gör om du undrar, bara ignorera det här så länge  
+        // JAG KOMMER GRÅTA
         float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity;
 
