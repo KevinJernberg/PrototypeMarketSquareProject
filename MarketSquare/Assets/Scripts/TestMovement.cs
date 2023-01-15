@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TestMovement : MonoBehaviour
 {
@@ -19,11 +20,14 @@ public class TestMovement : MonoBehaviour
     private bool grounded;
 
     private Rigidbody _rigidbody;
+
+    private PlayerInput playerControls;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        playerControls = GetComponent<InputAction>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
