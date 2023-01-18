@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class TestMovement : MonoBehaviour
 {
     //Movement
-    /*[SerializeField] 
+    [SerializeField] 
     private float moveSpeed;
     [SerializeField] 
     private float rotateSpeed;
@@ -15,7 +15,6 @@ public class TestMovement : MonoBehaviour
     [SerializeField] 
     private float jumpForce;
     private float jumpTimer;
-
     
     private bool grounded;
 
@@ -27,7 +26,7 @@ public class TestMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerControls = GetComponent<InputAction>();
+        playerControls = GetComponent<PlayerInput>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -87,5 +86,5 @@ public class TestMovement : MonoBehaviour
             jumpTimer = 0.1f;
             _rigidbody.AddForce(Vector3.up * jumpForce);
         }
-    }*/
+    }
 }
