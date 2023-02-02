@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="23fd547a-8ac9-4766-b255-8986445f0c22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MarketSquare/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MarketSquare/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Asset packs/Low poly medieval/Lowpoly Medieval Environments/SRP/PT_Environment_Pack_URP_7.5.3.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Kevin Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Kevin Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +11,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24849b8adc824129a6be3a206c90b9747c00/2c/58c9a936/Input.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../MonkPush/MonkPush/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../MonkPush/MonkPush/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://H:/Procedural/Assets/Piece.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -81,6 +73,7 @@
       <workItem from="1673731029476" duration="11000" />
       <workItem from="1673731070514" duration="3000" />
       <workItem from="1673737166115" duration="665000" />
+      <workItem from="1675353877205" duration="868000" />
     </task>
     <servers />
   </component>
