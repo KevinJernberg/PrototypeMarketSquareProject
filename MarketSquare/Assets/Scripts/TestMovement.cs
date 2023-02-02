@@ -68,7 +68,7 @@ public class TestMovement : MonoBehaviour
     private void GroundedCheck()
     {
         //Raycast to se if anything is directly below you
-        if (Physics.Raycast(transform.position, Vector3.down, 1.001f))
+        if (Physics.Raycast(transform.position, Vector3.down, 1.02f))
         {
             grounded = true;
         }

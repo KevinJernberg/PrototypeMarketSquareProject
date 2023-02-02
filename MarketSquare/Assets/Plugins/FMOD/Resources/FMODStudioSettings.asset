@@ -240,7 +240,6 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - FMOD BUILD/Desktop/Master
-  - FMOD PROJECT/MarketSquareProject/Build/Desktop/Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
