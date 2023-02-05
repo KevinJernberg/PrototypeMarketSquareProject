@@ -3,6 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="23fd547a-8ac9-4766-b255-8986445f0c22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MarketSquare/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MarketSquare/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/PlayerInputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/PlayerInputActions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/PlayerInputActions.inputactions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/PlayerInputActions.inputactions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Town.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Town.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Camera Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Camera Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +20,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24849b8adc824129a6be3a206c90b9747c00/2c/58c9a936/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../MonkPush/MonkPush/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://H:/Procedural/Assets/Piece.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Data/PlayerInputActions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://H:/MonkPush/MonkPush/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -74,6 +83,9 @@
       <workItem from="1673731070514" duration="3000" />
       <workItem from="1673737166115" duration="665000" />
       <workItem from="1675353877205" duration="868000" />
+      <workItem from="1675355404771" duration="803000" />
+      <workItem from="1675557679786" duration="4631000" />
+      <workItem from="1675563241332" duration="4257000" />
     </task>
     <servers />
   </component>

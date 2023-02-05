@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class TestMovement : MonoBehaviour
 {
@@ -19,15 +22,42 @@ public class TestMovement : MonoBehaviour
     private bool grounded;
 
     private Rigidbody _rigidbody;
-
-    private PlayerInput playerControls;
     
+    private GameObject mainCamera;
+    
+    private PlayerInputActions playerInputActions;
+    
+    private CharacterController controller;
+
+    private InputAction movement;
+    
+    private float speed;
+    public float speedChangeRate = 10.0f;
+    public float RotationSmoothTime = 0.12f;
+    private float _targetRotation = 0.0f;
+    
+    private float _rotationVelocity;
+    private float _verticalVelocity;
+    private float _terminalVelocity = 53.0f;
+    
+    
+    private void Awake()
+    {
+        // get a reference to our main camera
+        if (mainCamera == null)
+        {
+            mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
     {
-        playerControls = GetComponent<PlayerInput>();
         _rigidbody = GetComponent<Rigidbody>();
+        
+        
+        controller = GetComponent<CharacterController>();
+        playerInputActions = GetComponent<PlayerInputActions>();
     }
 
     
@@ -38,8 +68,11 @@ public class TestMovement : MonoBehaviour
         
         GroundedCheck();
         
+    }
+
+    private void FixedUpdate()
+    {
         Movement();
-        Jump();
     }
 
     private void TimersCountdown()
@@ -51,16 +84,65 @@ public class TestMovement : MonoBehaviour
     }
     
     //Movement input
+    // ReSharper disable Unity.PerformanceAnalysis
     private void Movement()
     {
-        if (Input.GetAxis("Vertical") != 0)
+        // set target speed based on move speed, sprint speed and if sprint is pressed
+        float targetSpeed = moveSpeed;
+
+        // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
+
+        // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
+        // if there is no input, set the target speed to 0
+        if (playerInputActions.move == Vector2.zero) targetSpeed = 0.0f;
+
+        // a reference to the players current horizontal velocity
+        float currentHorizontalSpeed = new Vector3(controller.velocity.x, 0.0f, controller.velocity.z).magnitude;
+
+        float speedOffset = 0.1f;
+        float inputMagnitude = playerInputActions.analogMovement ? playerInputActions.move.magnitude : 1f;
+
+        // accelerate or decelerate to target speed
+        if (currentHorizontalSpeed < targetSpeed - speedOffset ||
+            currentHorizontalSpeed > targetSpeed + speedOffset)
         {
-            transform.Translate(Vector3.forward *(moveSpeed * Time.deltaTime * Input.GetAxis("Vertical")));
+            // creates curved result rather than a linear one giving a more organic speed change
+            // note T in Lerp is clamped, so we don't need to clamp our speed
+            speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
+                Time.deltaTime * speedChangeRate);
+
+            // round speed to 3 decimal places
+            speed = Mathf.Round(speed * 1000f) / 1000f;
+        }
+        else
+        {
+            speed = targetSpeed;
         }
 
-        if (Input.GetAxis("Horizontal") != 0)
+        // normalise input direction
+        Vector3 inputDirection = new Vector3(playerInputActions.move.x, 0.0f, playerInputActions.move.y).normalized;
+        if (playerInputActions.move != Vector2.zero)
         {
-            transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
+            _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
+                              mainCamera.transform.eulerAngles.y;
+            float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
+                RotationSmoothTime);
+
+            // rotate to face input direction relative to camera position
+            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+        }
+
+
+        Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+
+        // move the player
+        controller.Move(targetDirection.normalized * (speed * Time.deltaTime) +
+                         new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+        
+        // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
+        if (!grounded && _verticalVelocity < _terminalVelocity)
+        {
+            _verticalVelocity += -9.82f * Time.deltaTime;
         }
     }
     
@@ -79,9 +161,9 @@ public class TestMovement : MonoBehaviour
     }
     
     //Jump
-    private void Jump()
+    private void DoJump(InputAction.CallbackContext obj)
     {
-        if (jumpTimer <= 0 && Input.GetButton("Jump") && grounded)
+        if (jumpTimer <= 0 && grounded)
         {
             jumpTimer = 0.1f;
             _rigidbody.AddForce(Vector3.up * jumpForce);
