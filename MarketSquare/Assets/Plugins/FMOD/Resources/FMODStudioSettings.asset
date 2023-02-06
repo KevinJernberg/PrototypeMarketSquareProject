@@ -214,10 +214,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
-  sourceProjectPath: 
-  sourceBankPath: ../FMOD
+  HasSourceProject: 1
+  HasPlatforms: 1
+  sourceProjectPath: ../FMOD/FMOD PROJECT/MarketSquareProject/MarketSquareProject.fspro
+  sourceBankPath: ../FMOD/FMOD PROJECT/MarketSquareProject/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - FMOD BUILD/Desktop/Master
+  - Desktop/Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
