@@ -21,13 +21,15 @@ public class TestMovement : MonoBehaviour
     
     private bool grounded;
 
-    private Rigidbody _rigidbody;
+    private float _rotationVelocity;
+    public float RotationSmoothTime = 0.12f;
+    private float rotationSpeed = 1;
 
     public Transform cam;
     
     private PlayerInputActions playerInputActions;
-    
-    private CharacterController controller;
+
+    private Rigidbody rigidBody;
 
     private Vector3 movement;
     private bool jump;
@@ -35,12 +37,13 @@ public class TestMovement : MonoBehaviour
 
     private void Awake()
     {
+        
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
         
         playerInputActions = GetComponent<PlayerInputActions>();
     }
@@ -75,24 +78,24 @@ public class TestMovement : MonoBehaviour
 
     private void Movement()
     {
-        Vector3 inputDirection = new Vector3(movement.x, 0.0f, movement.z);
-        float angle = cam.rotation.eulerAngles.y;
-        Debug.Log(inputDirection);
-        if (inputDirection.x != 0f && inputDirection.z != 0)
-        {
-            angle = 90f + -90f * inputDirection.z;
-            float angleReverser = 1f;
-            if (inputDirection.z == -1f)
-            {
-                angleReverser = -1f;
-            }
-            angle += 45 * angleReverser * inputDirection.x;
-        }
+        Vector3 inputDirection = new Vector3(movement.x, 0.0f, movement.z).normalized;
         
-        
+        rigidBody.rotation = transform.rotation;
+
         if (movement != Vector3.zero)
         {
-            _rigidbody.Move(transform.position + inputDirection * moveSpeed, q);
+            float angle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
+                        cam.transform.eulerAngles.y;
+            float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, angle, ref _rotationVelocity,
+                RotationSmoothTime);
+            
+            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+            
+            Vector3 inputDir = transform.forward * inputDirection.x + transform.right * inputDirection.z;
+
+            transform.forward = Vector3.Slerp(transform.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
+            
+            rigidBody.add
         }
         
     }
@@ -101,10 +104,9 @@ public class TestMovement : MonoBehaviour
     //Jump
     private void DoJump(InputAction.CallbackContext obj)
     {
-        if (playerInputActions.jump && jumpTimer <= 0 && controller.isGrounded)
-        {
-            jumpTimer = 0.1f;
-            _rigidbody.AddForce(Vector3.up * jumpForce);
-        }
+        // if (playerInputActions.jump && jumpTimer <= 0 && rigidBody)
+        // {
+        //     jumpTimer = 0.1f;
+        // }
     }
 }
