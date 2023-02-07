@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bb4e6f86-0d9a-4cf8-a536-f30d4d5450b1}">
+		<property name="assetPath">
+			<value>Bon Jovi - It's My Life [Lyrics].wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>224.52535416666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{df52506b-94d8-4731-b02c-4c6b5c8cb29c}</destination>
+		</relationship>
+	</object>
+</objects>
