@@ -20,6 +20,7 @@ public class TestMovement : MonoBehaviour
     private float jumpTimer;
     
     private bool grounded;
+    private int cayoteTime;
 
     private float _rotationVelocity;
     public float RotationSmoothTime = 0.12f;
@@ -31,8 +32,13 @@ public class TestMovement : MonoBehaviour
 
     private Rigidbody rigidBody;
 
+    private CharacterController controller;
+
+    public float gravity = -15.0f;
+
     private Vector3 movement;
     private bool jump;
+    private float _verticalVelocity;
 
 
     private void Awake()
@@ -44,6 +50,8 @@ public class TestMovement : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+
+        controller = GetComponent<CharacterController>();
         
         playerInputActions = GetComponent<PlayerInputActions>();
     }
@@ -59,7 +67,10 @@ public class TestMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        grounded = controller.isGrounded;
         Movement();
+        ApplyGravity();
+        Jump();
     }
 
     private void TimersCountdown()
@@ -79,8 +90,6 @@ public class TestMovement : MonoBehaviour
     private void Movement()
     {
         Vector3 inputDirection = new Vector3(movement.x, 0.0f, movement.z).normalized;
-        
-        rigidBody.rotation = transform.rotation;
 
         if (movement != Vector3.zero)
         {
@@ -90,23 +99,35 @@ public class TestMovement : MonoBehaviour
                 RotationSmoothTime);
             
             transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
-            
-            Vector3 inputDir = transform.forward * inputDirection.x + transform.right * inputDirection.z;
 
-            transform.forward = Vector3.Slerp(transform.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
-            
-            rigidBody.add
+            Vector3 moveDirection = Quaternion.Euler(0, rotation, 0) * Vector3.forward;
+            controller.Move(moveDirection * moveSpeed * Time.deltaTime);
         }
         
+        controller.Move(new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
     }
-    
-    
-    //Jump
-    private void DoJump(InputAction.CallbackContext obj)
+
+    private void ApplyGravity()
     {
-        // if (playerInputActions.jump && jumpTimer <= 0 && rigidBody)
-        // {
-        //     jumpTimer = 0.1f;
-        // }
+        if (grounded && _verticalVelocity < 0)
+        {
+            _verticalVelocity = 0;
+        }
+        _verticalVelocity += gravity * Time.deltaTime;
+    }
+
+    //Jump
+    private void Jump()
+    {
+        if (jump && grounded)
+        {
+            playerInputActions.jump = false;
+            Debug.Log("Jump");
+            _verticalVelocity = Mathf.Sqrt(jumpForce * gravity * -1);
+        }
+        else
+        {
+            playerInputActions.jump = false;
+        }
     }
 }
